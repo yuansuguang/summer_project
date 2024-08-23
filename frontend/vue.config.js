@@ -6,7 +6,7 @@ module.exports = defineConfig({
     // host: '192.168.43.86',
     proxy: {
       "/proxy_url": {
-        target: 'http://localhost:8000',
+        target: 'http://172.17.0.3:8000',
         changeOrigin: true,
         pathRewrite: {
           '^/proxy_url': '/'
