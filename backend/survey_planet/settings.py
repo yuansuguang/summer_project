@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'option',
     'submit',
     'image',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -56,9 +57,22 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'survey_planet.urls'
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+ALLOWED_HOSTS = [
+    '172.17.0.1',
+    '172.17.0.2',
+    '172.17.0.3',
+    '172.17.0.4',
+    '172.17.0.5',
+    '172.17.0.6',
+    'localhost',
+]
 
 TEMPLATES = [
     {
@@ -82,17 +96,44 @@ WSGI_APPLICATION = 'survey_planet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'survey_planet_test',
+#         'HOST': 'db',
+#         'PORT': 3306,
+#         'USER': 'root',
+#         'PASSWORD': '350305Glj'
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'survey_planet_test',
-        # 'HOST': '127.0.0.1',
-        'HOST': 'mysql',
-        'PORT': 3306,
+        # 'NAME': 'survey_planet_test',
+        'NAME': 'survey_planet',
+        'HOST': '172.17.0.2',
+        # 'HOST': 'survey_planet',
+        # 'PORT': '3306',
+        'PORT': '3306',
         'USER': 'root',
         'PASSWORD': '350305Glj'
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mydatabase',
+#         'USER': 'myuser',
+#         'PASSWORD': '350305Glj',
+#         'HOST': 'mysql',
+#         'PORT': '3306',
+#     }
+# }
+
 
 
 # Password validation

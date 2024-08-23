@@ -21,3 +21,15 @@ CMD ["sh", "-c", "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 surve
 
 # 暴露应用端口
 EXPOSE 8000
+
+
+
+
+
+
+
+
+
+
+
+
