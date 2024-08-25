@@ -31,7 +31,8 @@ app.use(router)
 app.use(store)
 app.config.productionTip = false
 app.config.globalProperties.$axios = axios;
-axios.defaults.baseURL = '/proxy_url'
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = 'http://localhost:8000'
 app.mount('#app')
 Object.keys(ElIcon).forEach((key) => {
   app.component(key, ElIcon[key])

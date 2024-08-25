@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,10 +58,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'survey_planet.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -112,10 +116,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': 'survey_planet_test',
         'NAME': 'survey_planet',
-        'HOST': '172.17.0.2',
+        'HOST': 'mycontainer-service',
         # 'HOST': 'survey_planet',
         # 'PORT': '3306',
-        'PORT': '3306',
+        'PORT': '3309',
         'USER': 'root',
         'PASSWORD': '350305Glj'
     }
