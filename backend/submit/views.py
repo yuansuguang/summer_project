@@ -18,7 +18,7 @@ import json
 import datetime
 
 @csrf_exempt
-def submit_survey(request):
+def submit_survey(request): #survey
     
     if request.method == 'POST':
         try:
@@ -157,7 +157,7 @@ def submit_survey(request):
     
 
 @csrf_exempt
-def save_survey(request):
+def save_survey(request): #survey
     
     if request.method == 'POST':
         try:
@@ -277,7 +277,7 @@ def save_survey(request):
 
 #清空问卷
 @csrf_exempt
-def clear_survey(request):
+def clear_survey(request): #survey
 
     if request.method == 'POST':
         try:
@@ -310,7 +310,7 @@ def clear_survey(request):
 
 
 @csrf_exempt
-def get_submissions_by_question_id(request):
+def get_submissions_by_question_id(request): #question
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -348,7 +348,7 @@ def get_submissions_by_question_id(request):
     
     
 @csrf_exempt
-def get_survey_submissions(request):
+def get_survey_submissions(request): #survey
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -402,7 +402,7 @@ def get_survey_submissions(request):
 
 
 @csrf_exempt
-def get_question_statistics(request):
+def get_question_statistics(request): #question
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -500,7 +500,7 @@ def get_question_statistics(request):
 
 
 @csrf_exempt
-def get_user_submissions(request):
+def get_user_submissions(request): #survey
     if not request.session.get('is_login'):
         return JsonResponse({'status_code': 401})
     
@@ -527,7 +527,7 @@ def get_user_submissions(request):
     
 #删除特定提交
 @csrf_exempt
-def delete_submission(request):
+def delete_submission(request): #survey
     if request.method == 'POST':
         form = clear_single_submit_form(request.POST)
         if form.is_valid():
