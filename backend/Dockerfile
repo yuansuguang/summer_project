@@ -17,7 +17,7 @@ COPY . .
 ENV PYTHONUNBUFFERED=1
 
 # 运行数据库迁移并启动应用
-CMD ["sh", "-c", "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 survey_planet.wsgi:application","python manage.py test"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 survey_planet.wsgi:application"]
 
 # 暴露应用端口
 EXPOSE 8000

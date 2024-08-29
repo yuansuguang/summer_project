@@ -62,6 +62,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'survey_planet.urls'
 
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
 ]
@@ -100,30 +102,30 @@ WSGI_APPLICATION = 'survey_planet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'survey_planet_test',
-#         'HOST': 'db',
-#         'PORT': 3306,
-#         'USER': 'root',
-#         'PASSWORD': '350305Glj'
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'survey_planet_test',
         'NAME': 'survey_planet',
         'HOST': 'mycontainer-service',
-        # 'HOST': 'survey_planet',
-        # 'PORT': '3306',
-        'PORT': '3309',
+        'PORT': 3309,
         'USER': 'root',
         'PASSWORD': '350305Glj'
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         # 'NAME': 'survey_planet_test',
+#         'NAME': 'survey_planet',
+#         'HOST': '172.17.0.2',
+#         # 'HOST': 'survey_planet',
+#         # 'PORT': '3306',
+#         'PORT': '3306',
+#         'USER': 'root',
+#         'PASSWORD': '350305Glj'
+#     }
+# }
 
 
 

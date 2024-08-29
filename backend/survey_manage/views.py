@@ -15,6 +15,7 @@ import datetime
 
 @csrf_exempt
 def survey_create(request):
+    print(request.COOKIES);
     if not request.session.get('is_login'):
         return JsonResponse({'status_code': 401})
     
